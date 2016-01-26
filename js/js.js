@@ -2,12 +2,13 @@ $(document).ready(function () {
 
 });
 
-var calc = {
+function calc () {
   var memory = 0;
   var operator = "";
-  var display = "0";
+  var display = 0;
+
   function putNumber (num) {
-    if (display === "0") {
+    if (display === 0) {
       display = num;
       this.refresh();
     }
@@ -16,12 +17,13 @@ var calc = {
       this.refresh();
     }
   }
+
   function putOperator (ope) {
-    if (operator === "") {
-      operator = ope;
+    if (operator === "=") {
+      this.compute()
     }
     else {
-      this.compute()
+      operator = ope;
     }
   }
 
@@ -39,17 +41,19 @@ var calc = {
         display *= memory;
         this.refresh();
         break;
-      case "*":
+      case "/":
         display = memory / display;
         this.refresh();
         break;
-      default:    
+      default:
     }
 }
   function refresh() {
     $("#display").html(display.substr(0,10));
   }
 };
+
+
 
 $(".numbers").click(function(event) {
    // get button id to get number
