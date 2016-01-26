@@ -5,6 +5,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'digital';
+        src: url('digital_dismay.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+div {
+  border: solid 1px;
+}
+
 #mainContainer {
   text-align: center;
   /*border: solid;*/
@@ -26,16 +37,49 @@
   background-color: #CCE;
 }
 
-#quotes {
+#calc {
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  padding: 10px 40px 10px 40px;
-  width: 35%;
+  padding: 10px 20px 10px 20px;
+  width: 17%;
   /*Esthetic part*/
   /*border: dashed;*/
   border-radius: 10px;
   box-shadow: 1px 1px 10px #000;
+}
+
+#display {
+  width: 93%;
+  padding: 10px 10px 10px 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: right;
+  font-family: digital;
+  font-size: 40px;
+}
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 10px 10px 10px;
+  width: 93%;
+  overflow: hidden;
+}
+
+.button {
+  width: 18%;
+  height: 25px;
+  float: left;
+  margin-left: 10px;
+  /*overflow: hidden;*/
+  text-align: center;
+  padding: 2px 2px 2px 2px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: grey;
 }
 
 #tweetContainer {
