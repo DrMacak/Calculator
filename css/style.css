@@ -13,7 +13,11 @@
 }
 
 div {
-  border: solid 1px;
+  /*border: solid 1px;*/
+}
+
+body {
+  background: #222;
 }
 
 #mainContainer {
@@ -26,68 +30,91 @@ div {
 #header {
   margin-top: 50px;
   margin-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
   margin-left: auto;
   margin-right: auto;
   width: 30%;
-  /*Esthetic part*/
   /*border: dashed;*/
-  padding: 10px 40px 10px 40px;
-  border-radius: 10px;
-  box-shadow: 1px 1px 10px #000;
-  background-color: #CCE;
+  font-family: masterOfBreak;
+  font-size: 40px;
+  color: #ABB;
+  text-shadow: 1px 1px 5px grey;
 }
 
 #calc {
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  padding: 10px 20px 10px 20px;
-  width: 17%;
+  padding: 10px 20px 20px 20px;
+  width: 250px;
+  overflow: auto;
   /*Esthetic part*/
   /*border: dashed;*/
-  border-radius: 10px;
-  box-shadow: 1px 1px 10px #000;
+  border-radius: 10% / 5%;
+  background-color: #606069;
+  border: solid 1px;
+  box-shadow: inset 1px -1px 40px black, 1px -1px 50px #555;
+
 }
 
 #display {
-  width: 93%;
-  padding: 10px 10px 10px 10px;
+  width: 90%;
+  padding: 5px 10px 5px 10px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 10px;
   text-align: right;
   font-family: digital;
-  font-size: 40px;
+  font-size: 50px;
+  border-radius: 10px;
+  box-shadow: inset 1px 0px 5px black;
+  background-color: #9F9;
+  border: solid grey;
 }
-
-.row {
+#keysWrap {
+  width: 100%;
+  overflow: auto;
   margin-left: auto;
   margin-right: auto;
-  padding: 10px 10px 10px 10px;
-  width: 93%;
-  overflow: hidden;
+  padding-left: 4px;
+}
+.column {
+  width: 20.3%;
+  float: left;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .button {
-  width: 18%;
-  height: 25px;
-  float: left;
-  margin-left: 10px;
+  width: 100%;
+  height: 30px;
+  /*float: left;*/
+  /*margin-left: 10px;*/
   /*overflow: hidden;*/
   text-align: center;
-  padding: 2px 2px 2px 2px;
+  padding-top: 8px;
   cursor: pointer;
+  border: solid 1px;
+  border-radius: 50% / 25%;
+  background-color: #777;
+  box-shadow: inset 1px -1px 10px black, 1px 1px 5px black; /*bottom internal shadow*/
+  /*font-weight: bolder;*/
+  text-shadow: 0px 0px 1px white;
+  font-family: fantasy;
+  margin-top: 7px;
+  margin-bottom: 12px;
+  overflow: visible;
+}
+
+.button.plus {
+  border-radius: 30% / 15%;
+  height: 55px;
+  padding-top: 30px;
+  overflow: hidden;
 }
 
 .button:hover {
-  background-color: grey;
-}
-
-#tweetContainer {
-  text-align: left;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px 40px 10px 40px;
-  width: 35%;
-  /*Esthetic part*/
+  box-shadow: inset 1px -1px 8px black,  1px 1px 1px black; /*bottom internal shadow*/
 }

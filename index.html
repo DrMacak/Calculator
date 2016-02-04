@@ -1,5 +1,6 @@
 
 <!DOCTYPE html>
+<!--  -->
 <html>
 <head>
 <title>FreeCodeCamp - Calculator</title>
@@ -31,37 +32,37 @@
 </head>
 <body>
   <div id="mainContainer">
+    <div id="header">The Calculator</div>
     <div id="calc">
       <div id="display">0</div>
-      <div class="row">
-        <div id="AC" class="special button">AC</div>
-        <div id="CE" class="special button">CE</div>
-        <div id="%" class="operators button">%</div>
-        <div id="/" class="operators button">/</div>
-      </div>
-      <div class="row">
-        <div id="7" class="numbers button">7</div>
-        <div id="8" class="numbers button">8</div>
-        <div id="9" class="numbers button">9</div>
-        <div id="*" class="operators button">*</div>
-      </div>
-      <div class="row">
-        <div id="4" class="numbers button">4</div>
-        <div id="5" class="numbers button">5</div>
-        <div id="6" class="numbers button">6</div>
-        <div id="-" class="operators button">-</div>
-      </div>
-      <div class="row">
-        <div id="1" class="numbers button">1</div>
-        <div id="2" class="numbers button">2</div>
-        <div id="3" class="numbers button">3</div>
-        <div id="+" class="operators button">+</div>
-      </div>
-      <div class="row">
-        <div id="." class="numbers button">.</div>
-        <div id="0" class="numbers button">0</div>
-        <div id="=" class="operators button">=</div>
-        <div id="+" class="operators button">+</div>
+      <div id="keysWrap">
+        <div class="column">
+          <div id="AC" class="special button">AC</div>
+          <div id="7" class="numbers button">7</div>
+          <div id="4" class="numbers button">4</div>
+          <div id="1" class="numbers button">1</div>
+          <div id="." class="numbers button">.</div>
+        </div>
+        <div class="column">
+          <div id="CE" class="special button">CE</div>
+          <div id="8" class="numbers button">8</div>
+          <div id="5" class="numbers button">5</div>
+          <div id="2" class="numbers button">2</div>
+          <div id="0" class="numbers button">0</div>
+        </div>
+        <div class="column">
+          <div id="%" class="operators button">%</div>
+          <div id="9" class="numbers button">9</div>
+          <div id="6" class="numbers button">6</div>
+          <div id="3" class="numbers button">3</div>
+          <div id="=" class="operators button">=</div>
+        </div>
+        <div class="column">
+          <div id="/" class="operators button">/</div>
+          <div id="*" class="operators button">*</div>
+          <div id="-" class="operators button">-</div>
+          <div id="+" class="operators button plus">+</div>
+        </div>
       </div>
     </div>
   </div>

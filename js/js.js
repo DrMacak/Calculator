@@ -1,21 +1,21 @@
-$(document).ready(function () {
-
 function calculator () {
   var memory = 0;
   var operator = "";
   var display = "0";
+  var overWrite = true;
 
   this.init = function () {
     memory = 0;
     operator = "";
     display = "0";
+    overWrite = true;
     this.refresh();
   }
 
   this.putNumber = function (num) {
-    this.logit();
-    if (display === "0") {
+    if (overWrite) {
       display = num;
+      overWrite = false;
       this.refresh();
     }
     else {
@@ -25,31 +25,33 @@ function calculator () {
   }
 
   this.putOperator = function (ope) {
-    this.logit();
     if (ope === "=" || operator !== "") {
-      this.compute()
-    }
-    else {
-      memory = parseFloat(display);
-      display = "0";
+      if (ope !== "=" && overWrite) {
+        operator = ope;
+      } else {
+        this.compute();
+      }
+    } else {
+      this.pushToRegister();
+      // display = "0";
       operator = ope;
       this.refresh();
     }
   }
 
   this.putSpecial = function (spec) {
-    this.logit();
     if (spec === "AC") {
       this.init()
     } else if (spec === "CE") {
       display = "0";
+      overWrite = true;
       this.refresh();
     }
   }
 
   this.compute = function () {
     displayInt = parseFloat(display);
-    this.logit();
+
     if (operator === "-"){
         display = memory - displayInt;
       } else if (operator === "+") {
@@ -65,37 +67,36 @@ function calculator () {
           display = (memory / displayInt)*100;
         }
       }
-    memory = parseFloat(display);
-    operator = "";
+    display = display.toString();
+    this.pushToRegister();
+    // operator = "";
     this.refresh();
   }
+
   this.refresh = function () {
-    $("#display").html(display);
+    $("#display").html(display.substr(0,10));
   }
-  this.logit = function () {
-    console.log("display " + display);
-    console.log("memory " + memory);
-    console.log("operator " + operator);
+
+  this.pushToRegister = function () {
+    memory = parseFloat(display);
+    overWrite = true;
   }
 };
-var calc = new calculator();
-$(".numbers").click(function(event) {
-   // get button id to get number
-  calc.putNumber($(this).attr("id"));
-});
 
-$(".operators").click(function(event) {
-  calc.putOperator($(this).attr("id"));
-});
+$(document).ready(function () {
 
-$("#compute").click(function() {
-  calc.compute();
-});
+  var calc = new calculator();
 
-$(".special").click(function() {
-  calc.putSpecial($(this).attr("id"));
-});
+  $(".numbers").click(function(event) {
+    calc.putNumber($(this).attr("id"));
+  });
 
+  $(".operators").click(function(event) {
+    calc.putOperator($(this).attr("id"));
+  });
 
+  $(".special").click(function() {
+    calc.putSpecial($(this).attr("id"));
+  });
 
 });
